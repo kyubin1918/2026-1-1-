@@ -67,13 +67,29 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <div class="brand" aria-label="1-1 학습 도우미 로고">
-        <div class="brand-mark"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14h18a8 8 0 0 1 8 8v12H18a8 8 0 0 0-8 8V14Z"></path><path d="M18 18h18v16"></path><path d="M18 26h10"></path><path d="M18 31h7"></path><path d="M34 10v8"></path><path d="M30 14h8"></path></svg></div>
-        <div class="brand-text"><strong>1-1 학습 도우미</strong><span>읽기 + 저장 확장형 버전</span></div>
+        <div class="brand-mark">
+          <svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 14h18a8 8 0 0 1 8 8v12H18a8 8 0 0 0-8 8V14Z"></path>
+            <path d="M18 18h18v16"></path>
+            <path d="M18 26h10"></path>
+            <path d="M18 31h7"></path>
+            <path d="M34 10v8"></path>
+            <path d="M30 14h8"></path>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <strong>1-1 학습 도우미</strong>
+          <span>읽기 + 저장 확장형 버전</span>
+        </div>
       </div>
       <div class="toolbar">
         <button class="mode-btn active" id="studentModeBtn" type="button">학생용</button>
         <button class="mode-btn" id="adminModeBtn" type="button">학습나눔부용</button>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-label="다크 모드로 전환"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="다크 모드로 전환">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
       </div>
     </div>
   </header>
@@ -84,16 +100,36 @@
         <article class="hero-card hero-copy">
           <span class="eyebrow">학교 테마 · 초록/화이트</span>
           <h1>공부 고민, 여기로 맡겨봐!</h1>
-          <p>이 버전은 학생이 남긴 도움 요청과 후기를 Google Sheets에 저장하고, 학습나눔부용 화면 안에서도 바로 불러와 볼 수 있게 만든 확장형이야.</p>
+          <p>헷갈리는 문제나 혼자 풀기 어려운 부분이 있다면 편하게 도움을 요청해 봐. 학습나눔부가 내용을 확인하고 함께 해결할 수 있도록 도와줄게.</p>
           <ul class="hero-points" role="list">
-            <li><strong>실제 기록 저장</strong><span>폼 제출 내용이 Apps Script를 통해 Requests, Reviews 시트에 누적돼.</span></li>
-            <li><strong>웹사이트 안에서 확인</strong><span>학습나눔부 모드에서 새로고침 버튼을 누르면 시트 내용이 바로 카드 형태로 보여.</span></li>
+            <li>
+              <strong>도움 요청하기</strong>
+              <span>과목, 문제, 원하는 시간대를 자세히 적어주면 더 알맞게 도움을 받을 수 있어.</span>
+            </li>
+            <li>
+              <strong>후기로 함께 발전하기</strong>
+              <span>도움을 받은 뒤 사용후기를 남겨주면 학습나눔부가 더 좋은 방식으로 성장하는 데 큰 도움이 돼.</span>
+            </li>
           </ul>
         </article>
         <aside class="hero-card hero-side">
-          <div class="stat"><span class="hint">현재 화면</span><strong id="viewTitle">학생용 모드</strong></div>
-          <div class="info-card"><p class="hint">학습나눔부원</p><div class="meta"><span class="badge">김규빈</span><span class="badge">김래현</span><span class="badge">김우담</span><span class="badge">박건형</span></div></div>
-          <div class="info-card"><p class="hint">이용 안내</p><p id="connectionHint">도움이 필요한 내용을 정확하게 적어주면 학습나눔부가 더 빠르게 확인할 수 있어.</p></div>
+          <div class="stat">
+            <span class="hint">현재 화면</span>
+            <strong id="viewTitle">학생용 모드</strong>
+          </div>
+          <div class="info-card">
+            <p class="hint">학습나눔부원</p>
+            <div class="meta">
+              <span class="badge">김규빈</span>
+              <span class="badge">김래현</span>
+              <span class="badge">김우담</span>
+              <span class="badge">박건형</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <p class="hint">이용 안내</p>
+            <p id="connectionHint">도움이 필요한 내용을 정확하게 적어주고, 도움을 받은 뒤에는 후기도 꼭 남겨줘.</p>
+          </div>
         </aside>
       </div>
     </section>
@@ -106,16 +142,53 @@
           <form id="requestForm">
             <input type="hidden" name="formType" value="request" />
             <div class="field-row">
-              <div class="field-group"><label for="studentName">도움 요청 학생 이름</label><input id="studentName" name="studentName" type="text" placeholder="예: 홍길동" required /></div>
-              <div class="field-group"><label for="helperName">도움받고 싶은 학습나눔부원</label><select id="helperName" name="helperName" required><option value="">부원을 선택해 주세요</option><option>김규빈</option><option>김래현</option><option>김우담</option><option>박건형</option></select></div>
+              <div class="field-group">
+                <label for="studentName">도움 요청 학생 이름</label>
+                <input id="studentName" name="studentName" type="text" placeholder="예: 홍길동" required />
+              </div>
+              <div class="field-group">
+                <label for="helperName">도움받고 싶은 학습나눔부원</label>
+                <select id="helperName" name="helperName" required>
+                  <option value="">부원을 선택해 주세요</option>
+                  <option>김규빈</option>
+                  <option>김래현</option>
+                  <option>김우담</option>
+                  <option>박건형</option>
+                </select>
+              </div>
             </div>
-            <div class="field-group"><label for="helpTopic">도움받고 싶은 내용</label><textarea id="helpTopic" name="helpTopic" placeholder="예: 수학 경우의 수 교과서 스스로 하기 5번 문제를 어떻게 푸는지 모르겠어요" required></textarea></div>
+            <div class="field-group">
+              <label for="helpTopic">도움받고 싶은 내용</label>
+              <textarea id="helpTopic" name="helpTopic" placeholder="예: 수학 경우의 수 교과서 스스로 하기 5번 문제를 어떻게 푸는지 모르겠어요" required></textarea>
+            </div>
             <div class="field-row">
-              <div class="field-group"><label for="helpDate">도움받고 싶은 날짜</label><input id="helpDate" name="helpDate" type="date" required /></div>
-              <div class="field-group"><label for="helpTime">도움받고 싶은 시간</label><select id="helpTime" name="helpTime" required><option value="">시간대를 선택해 주세요</option><option>1교시 후 쉬는시간</option><option>2교시 후 쉬는시간</option><option>3교시 후 쉬는시간</option><option>4교시 후 쉬는시간</option><option>점심시간</option><option>5교시 후 쉬는시간</option><option>6교시 후 쉬는시간</option><option>방과 후</option></select></div>
+              <div class="field-group">
+                <label for="helpDate">도움받고 싶은 날짜</label>
+                <input id="helpDate" name="helpDate" type="date" required />
+              </div>
+              <div class="field-group">
+                <label for="helpTime">도움받고 싶은 시간</label>
+                <select id="helpTime" name="helpTime" required>
+                  <option value="">시간대를 선택해 주세요</option>
+                  <option>1교시 후 쉬는시간</option>
+                  <option>2교시 후 쉬는시간</option>
+                  <option>3교시 후 쉬는시간</option>
+                  <option>4교시 후 쉬는시간</option>
+                  <option>점심시간</option>
+                  <option>5교시 후 쉬는시간</option>
+                  <option>6교시 후 쉬는시간</option>
+                  <option>방과 후</option>
+                </select>
+              </div>
             </div>
-            <div class="field-group"><label for="requestNote">추가 메모</label><input id="requestNote" name="requestNote" type="text" placeholder="교과서는 가지고 있습니다" /></div>
-            <div class="button-row"><button class="btn btn-primary" type="submit">요청 제출하기</button><button class="btn btn-secondary" type="reset">다시 쓰기</button></div>
+            <div class="field-group">
+              <label for="requestNote">추가 메모</label>
+              <input id="requestNote" name="requestNote" type="text" placeholder="교과서는 가지고 있습니다" />
+            </div>
+            <div class="button-row">
+              <button class="btn btn-primary" type="submit">요청 제출하기</button>
+              <button class="btn btn-secondary" type="reset">다시 쓰기</button>
+            </div>
             <div class="status-box" id="requestStatus"></div>
           </form>
         </article>
@@ -126,17 +199,41 @@
           <form id="reviewForm">
             <input type="hidden" name="formType" value="review" />
             <div class="field-row">
-              <div class="field-group"><label for="reviewStudent">도움받은 학생</label><input id="reviewStudent" name="reviewStudent" type="text" placeholder="예: 홍길동" required /></div>
-              <div class="field-group"><label for="reviewHelper">도움을 준 학습나눔부원</label><select id="reviewHelper" name="reviewHelper" required><option value="">부원을 선택해 주세요</option><option>김규빈</option><option>김래현</option><option>김우담</option><option>박건형</option></select></div>
+              <div class="field-group">
+                <label for="reviewStudent">도움받은 학생</label>
+                <input id="reviewStudent" name="reviewStudent" type="text" placeholder="예: 홍길동" required />
+              </div>
+              <div class="field-group">
+                <label for="reviewHelper">도움을 준 학습나눔부원</label>
+                <select id="reviewHelper" name="reviewHelper" required>
+                  <option value="">부원을 선택해 주세요</option>
+                  <option>김규빈</option>
+                  <option>김래현</option>
+                  <option>김우담</option>
+                  <option>박건형</option>
+                </select>
+              </div>
             </div>
             <div class="field-group">
               <label>별점 평가</label>
-              <div class="stars" role="radiogroup" aria-label="별점 선택"><button class="star-btn" type="button" data-rating="1" aria-label="1점">★</button><button class="star-btn" type="button" data-rating="2" aria-label="2점">★</button><button class="star-btn" type="button" data-rating="3" aria-label="3점">★</button><button class="star-btn" type="button" data-rating="4" aria-label="4점">★</button><button class="star-btn" type="button" data-rating="5" aria-label="5점">★</button></div>
+              <div class="stars" role="radiogroup" aria-label="별점 선택">
+                <button class="star-btn" type="button" data-rating="1" aria-label="1점">★</button>
+                <button class="star-btn" type="button" data-rating="2" aria-label="2점">★</button>
+                <button class="star-btn" type="button" data-rating="3" aria-label="3점">★</button>
+                <button class="star-btn" type="button" data-rating="4" aria-label="4점">★</button>
+                <button class="star-btn" type="button" data-rating="5" aria-label="5점">★</button>
+              </div>
               <input type="hidden" id="ratingValue" name="ratingValue" required />
               <p class="hint" id="ratingOutput">별점을 선택해 주세요.</p>
             </div>
-            <div class="field-group"><label for="reviewText">후기 내용</label><textarea id="reviewText" name="reviewText" placeholder="예: 설명이 친절해서 이해가 잘 되었어요." required></textarea></div>
-            <div class="button-row"><button class="btn btn-primary" type="submit">후기 저장하기</button><button class="btn btn-secondary" type="reset">초기화</button></div>
+            <div class="field-group">
+              <label for="reviewText">후기 내용</label>
+              <textarea id="reviewText" name="reviewText" placeholder="예: 설명이 친절해서 이해가 잘 되었어요." required></textarea>
+            </div>
+            <div class="button-row">
+              <button class="btn btn-primary" type="submit">후기 저장하기</button>
+              <button class="btn btn-secondary" type="reset">초기화</button>
+            </div>
             <div class="status-box" id="reviewStatus"></div>
           </form>
         </article>
@@ -145,7 +242,10 @@
 
     <section class="admin-content admin-only" style="margin-top:2rem;">
       <div class="admin-banner">
-        <div><strong>학습나눔부 관리 모드가 열려 있어.</strong><p class="hint">아래 목록은 Google Sheets에서 직접 불러온 내용이야.</p></div>
+        <div>
+          <strong>학습나눔부 관리 모드가 열려 있어.</strong>
+          <p class="hint">아래 목록은 Google Sheets에서 직접 불러온 내용이야.</p>
+        </div>
         <button class="btn btn-danger" id="logoutAdminBtn" type="button">관리 모드 닫기</button>
       </div>
       <div class="section-grid">
@@ -161,17 +261,30 @@
             <button class="tab active" type="button" data-tab="requests" role="tab" aria-selected="true">제출된 요청</button>
             <button class="tab" type="button" data-tab="reviews" role="tab" aria-selected="false">사용후기</button>
           </div>
-          <div id="tab-requests" class="tab-panel" style="margin-top:1rem;"><div id="requestList" class="request-list"></div></div>
-          <div id="tab-reviews" class="tab-panel" hidden style="margin-top:1rem;"><div id="reviewList" class="review-list"></div></div>
+          <div id="tab-requests" class="tab-panel" style="margin-top:1rem;">
+            <div id="requestList" class="request-list"></div>
+          </div>
+          <div id="tab-reviews" class="tab-panel" hidden style="margin-top:1rem;">
+            <div id="reviewList" class="review-list"></div>
+          </div>
           <div class="status-box" id="adminStatus"></div>
         </article>
         <aside class="panel">
           <h2>운영 메모</h2>
           <p class="panel-intro">같은 Apps Script가 저장과 읽기를 모두 처리해.</p>
           <div class="info-list">
-            <div class="info-card"><strong>확인 가능한 내용</strong><p>제출된 요청과 후기를 학습나눔부 화면에서 바로 확인할 수 있어.</p></div>
-            <div class="info-card"><strong>도움 요청 관리</strong><p>요청 학생, 원하는 부원, 날짜와 시간, 추가 메모까지 한눈에 볼 수 있어.</p></div>
-            <div class="info-card"><strong>후기 확인</strong><p>학생들이 남긴 별점과 후기를 보고 다음 활동에 참고할 수 있어.</p></div>
+            <div class="info-card">
+              <strong>확인 가능한 내용</strong>
+              <p>제출된 요청과 후기를 학습나눔부 화면에서 바로 확인할 수 있어.</p>
+            </div>
+            <div class="info-card">
+              <strong>도움 요청 관리</strong>
+              <p>요청 학생, 원하는 부원, 날짜와 시간, 추가 메모까지 한눈에 볼 수 있어.</p>
+            </div>
+            <div class="info-card">
+              <strong>후기 확인</strong>
+              <p>학생들이 남긴 별점과 후기를 보고 다음 활동에 참고할 수 있어.</p>
+            </div>
           </div>
         </aside>
       </div>
@@ -183,8 +296,15 @@
       <h2 style="margin-bottom:.5rem;font-family:var(--font-display);">학습나눔부 모드 비밀번호</h2>
       <p class="panel-intro" style="margin-bottom:1rem;">학습나눔부용 화면을 열려면 비밀번호를 입력해 주세요.</p>
       <form id="passwordForm">
-        <div class="field-group"><label for="adminPassword">비밀번호</label><input id="adminPassword" type="password" placeholder="비밀번호 입력" required /><p class="error-text" id="passwordError" hidden>비밀번호가 올바르지 않아요.</p></div>
-        <div class="button-row"><button class="btn btn-primary" type="submit">확인</button><button class="btn btn-secondary" type="button" id="cancelPasswordBtn">취소</button></div>
+        <div class="field-group">
+          <label for="adminPassword">비밀번호</label>
+          <input id="adminPassword" type="password" placeholder="비밀번호 입력" required />
+          <p class="error-text" id="passwordError" hidden>비밀번호가 올바르지 않아요.</p>
+        </div>
+        <div class="button-row">
+          <button class="btn btn-primary" type="submit">확인</button>
+          <button class="btn btn-secondary" type="button" id="cancelPasswordBtn">취소</button>
+        </div>
       </form>
     </div>
   </div>
@@ -222,7 +342,11 @@
         : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
     };
     updateThemeIcon();
-    themeToggle.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; root.setAttribute('data-theme', theme); updateThemeIcon(); });
+    themeToggle.addEventListener('click', () => {
+      theme = theme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', theme);
+      updateThemeIcon();
+    });
 
     const setMode = (mode) => {
       body.classList.remove('student-mode', 'admin-mode');
@@ -231,8 +355,17 @@
       adminModeBtn.classList.toggle('active', mode === 'admin');
       viewTitle.textContent = mode === 'admin' ? '학습나눔부 관리 모드' : '학생용 모드';
     };
-    const openPasswordModal = () => { passwordModal.classList.add('show'); passwordModal.setAttribute('aria-hidden', 'false'); passwordInput.value = ''; passwordError.hidden = true; setTimeout(() => passwordInput.focus(), 30); };
-    const closePasswordModal = () => { passwordModal.classList.remove('show'); passwordModal.setAttribute('aria-hidden', 'true'); };
+    const openPasswordModal = () => {
+      passwordModal.classList.add('show');
+      passwordModal.setAttribute('aria-hidden', 'false');
+      passwordInput.value = '';
+      passwordError.hidden = true;
+      setTimeout(() => passwordInput.focus(), 30);
+    };
+    const closePasswordModal = () => {
+      passwordModal.classList.remove('show');
+      passwordModal.setAttribute('aria-hidden', 'true');
+    };
     studentModeBtn.addEventListener('click', () => setMode('student'));
     adminModeBtn.addEventListener('click', () => openPasswordModal());
     cancelPasswordBtn.addEventListener('click', () => closePasswordModal());
@@ -383,7 +516,10 @@
     const tabPanels = document.querySelectorAll('.tab-panel');
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
-        tabs.forEach((btn) => { btn.classList.remove('active'); btn.setAttribute('aria-selected', 'false'); });
+        tabs.forEach((btn) => {
+          btn.classList.remove('active');
+          btn.setAttribute('aria-selected', 'false');
+        });
         tabPanels.forEach((panel) => panel.hidden = true);
         tab.classList.add('active');
         tab.setAttribute('aria-selected', 'true');
