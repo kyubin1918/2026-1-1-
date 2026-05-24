@@ -31,36 +31,75 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth}
     body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);background:linear-gradient(180deg,var(--color-bg),var(--color-surface-2));color:var(--color-text)}
-    button,input,textarea,select{font:inherit;color:inherit} button{cursor:pointer;border:none;background:none} a{color:var(--color-primary)} :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    button,input,textarea,select{font:inherit;color:inherit}
+    button{cursor:pointer;border:none;background:none}
+    a{color:var(--color-primary)}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
     .container{width:min(calc(100% - 2rem),var(--content-default));margin-inline:auto}
     .topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--color-bg) 82%, transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--color-divider)}
     .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-4) 0}
-    .brand{display:flex;align-items:center;gap:var(--space-3)} .brand-mark{width:44px;height:44px;padding:8px;border-radius:14px;background:var(--color-primary-highlight);color:var(--color-primary);box-shadow:var(--shadow-sm)}
-    .brand-text strong{display:block;font-size:var(--text-lg);font-family:var(--font-display)} .brand-text span{display:block;font-size:var(--text-sm);color:var(--color-text-muted)}
-    .toolbar{display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap} .mode-btn,.theme-toggle,.refresh-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.75rem 1rem;border-radius:var(--radius-full);border:1px solid var(--color-border);background:var(--color-surface);transition:all var(--transition-interactive)}
+    .brand{display:flex;align-items:center;gap:var(--space-3)}
+    .brand-mark{width:44px;height:44px;padding:8px;border-radius:14px;background:var(--color-primary-highlight);color:var(--color-primary);box-shadow:var(--shadow-sm)}
+    .brand-text strong{display:block;font-size:var(--text-lg);font-family:var(--font-display)}
+    .brand-text span{display:block;font-size:var(--text-sm);color:var(--color-text-muted)}
+    .toolbar{display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap}
+    .mode-btn,.theme-toggle,.refresh-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.75rem 1rem;border-radius:var(--radius-full);border:1px solid var(--color-border);background:var(--color-surface);transition:all var(--transition-interactive)}
     .mode-btn.active{background:var(--color-primary);border-color:var(--color-primary);color:var(--color-text-inverse)}
-    .hero{padding:var(--space-12) 0 var(--space-8)} .hero-grid,.section-grid{display:grid;gap:var(--space-6)} .hero-grid{grid-template-columns:1.15fr .85fr;align-items:start} .section-grid{grid-template-columns:1fr 1fr}
-    .hero-card,.panel,.modal-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);box-shadow:var(--shadow-md)} .hero-copy,.hero-side,.panel,.modal-card{padding:clamp(1.25rem,2.8vw,2rem)}
+    .hero{padding:var(--space-12) 0 var(--space-8)}
+    .hero-grid,.section-grid{display:grid;gap:var(--space-6)}
+    .hero-grid{grid-template-columns:1.15fr .85fr;align-items:start}
+    .section-grid{grid-template-columns:1fr 1fr}
+    .hero-card,.panel,.modal-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);box-shadow:var(--shadow-md)}
+    .hero-copy,.hero-side,.panel,.modal-card{padding:clamp(1.25rem,2.8vw,2rem)}
     .eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .8rem;border-radius:var(--radius-full);background:var(--color-primary-highlight);color:var(--color-primary);font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-4)}
     h1{font-family:var(--font-display);font-size:var(--text-2xl);line-height:1.15;max-width:12ch;margin-bottom:var(--space-4)}
     .hero-copy p,.panel-intro,.hint,.empty,.muted{color:var(--color-text-muted)}
-    .hero-points,.info-list,.request-list,.review-list{display:grid;gap:var(--space-4)} .hero-points li,.stat,.info-card,.request-card,.review-card{padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-2);border:1px solid var(--color-divider)}
-    .hero-points li{list-style:none;display:flex;gap:var(--space-3);align-items:flex-start} .stat strong{display:block;font-size:var(--text-xl);font-family:var(--font-display)} main{padding-bottom:var(--space-16)} .panel h2{font-size:var(--text-xl);font-family:var(--font-display);margin-bottom:var(--space-2)}
-    form{display:grid;gap:var(--space-4)} .field-group{display:grid;gap:var(--space-2)} .field-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)} label{font-weight:600}
+    .hero-points,.info-list,.request-list,.review-list{display:grid;gap:var(--space-4)}
+    .hero-points li,.stat,.info-card,.request-card,.review-card{padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-2);border:1px solid var(--color-divider)}
+    .hero-points li{list-style:none;display:flex;gap:var(--space-3);align-items:flex-start}
+    .stat strong{display:block;font-size:var(--text-xl);font-family:var(--font-display)}
+    main{padding-bottom:var(--space-16)}
+    .panel h2{font-size:var(--text-xl);font-family:var(--font-display);margin-bottom:var(--space-2)}
+    form{display:grid;gap:var(--space-4)}
+    .field-group{display:grid;gap:var(--space-2)}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
+    label{font-weight:600}
     input,select,textarea{width:100%;padding:.95rem 1rem;border-radius:var(--radius-md);border:1px solid var(--color-border);background:var(--color-surface-2);transition:border-color var(--transition-interactive), box-shadow var(--transition-interactive), background var(--transition-interactive)}
-    textarea{min-height:140px;resize:vertical} input:focus,select:focus,textarea:focus{border-color:var(--color-primary);box-shadow:0 0 0 4px color-mix(in srgb, var(--color-primary) 18%, transparent);background:var(--color-surface)}
+    textarea{min-height:140px;resize:vertical}
+    input:focus,select:focus,textarea:focus{border-color:var(--color-primary);box-shadow:0 0 0 4px color-mix(in srgb, var(--color-primary) 18%, transparent);background:var(--color-surface)}
     .button-row,.tabs,.meta,.stars,.row-between{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center}
     .row-between{justify-content:space-between}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.9rem 1.25rem;border-radius:var(--radius-full);font-weight:600;transition:all var(--transition-interactive)} .btn-primary{background:var(--color-primary);color:var(--color-text-inverse)} .btn-primary:hover{background:var(--color-primary-hover)} .btn-secondary,.tab{background:var(--color-surface-2);border:1px solid var(--color-border)} .btn-danger{background:var(--color-danger);color:#fff}
-    .tab{min-height:44px;padding:.75rem 1rem;border-radius:var(--radius-full)} .tab.active{background:var(--color-primary-highlight);color:var(--color-primary);border-color:color-mix(in srgb,var(--color-primary) 35%, var(--color-border))}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.9rem 1.25rem;border-radius:var(--radius-full);font-weight:600;transition:all var(--transition-interactive)}
+    .btn-primary{background:var(--color-primary);color:var(--color-text-inverse)}
+    .btn-primary:hover{background:var(--color-primary-hover)}
+    .btn-secondary,.tab{background:var(--color-surface-2);border:1px solid var(--color-border)}
+    .btn-danger{background:var(--color-danger);color:#fff}
+    .tab{min-height:44px;padding:.75rem 1rem;border-radius:var(--radius-full)}
+    .tab.active{background:var(--color-primary-highlight);color:var(--color-primary);border-color:color-mix(in srgb,var(--color-primary) 35%, var(--color-border))}
     .badge{display:inline-flex;align-items:center;padding:.35rem .7rem;border-radius:var(--radius-full);font-size:var(--text-xs);background:var(--color-primary-highlight);color:var(--color-primary);font-weight:700}
-    .empty{padding:var(--space-8);text-align:center;border:1px dashed var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface-2)} .star-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--color-border);background:var(--color-surface-2);font-size:1.2rem;display:grid;place-items:center} .star-btn.active{background:var(--color-primary);border-color:var(--color-primary);color:var(--color-text-inverse)}
-    .admin-only{display:none} body.admin-mode .admin-only{display:block} body.student-mode .student-content{display:block} body.admin-mode .student-content{display:block} body.admin-mode .admin-content{display:block} body.student-mode .admin-content{display:none}
-    .admin-banner{display:none;margin-bottom:var(--space-6)} body.admin-mode .admin-banner{display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-primary-highlight);color:var(--color-primary)}
-    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:1rem;z-index:50} .modal-backdrop.show{display:flex} .modal-card{width:min(100%,460px)} .error-text{color:var(--color-danger);font-size:var(--text-sm)}
-    .status-box{margin-top:var(--space-3);padding:.85rem 1rem;border-radius:var(--radius-md);font-size:var(--text-sm);display:none} .status-box.show{display:block} .status-success{background:color-mix(in srgb, var(--color-success) 14%, var(--color-surface)); color:var(--color-success)} .status-error{background:color-mix(in srgb, var(--color-danger) 12%, var(--color-surface)); color:var(--color-danger)}
-    code{padding:.15rem .4rem;border-radius:.4rem;background:var(--color-surface-offset)} footer{padding:var(--space-10) 0 var(--space-12);color:var(--color-text-muted)}
-    @media (max-width: 920px){.hero-grid,.section-grid,.field-row{grid-template-columns:1fr}} @media (max-width: 640px){.topbar-inner{display:grid;grid-template-columns:1fr}.toolbar{justify-content:flex-start}h1{max-width:unset}.admin-banner{align-items:flex-start;flex-direction:column}}
+    .empty{padding:var(--space-8);text-align:center;border:1px dashed var(--color-border);border-radius:var(--radius-lg);background:var(--color-surface-2)}
+    .star-btn{width:44px;height:44px;border-radius:50%;border:1px solid var(--color-border);background:var(--color-surface-2);font-size:1.2rem;display:grid;place-items:center}
+    .star-btn.active{background:var(--color-primary);border-color:var(--color-primary);color:var(--color-text-inverse)}
+    .admin-only{display:none}
+    body.admin-mode .admin-only{display:block}
+    body.student-mode .student-content{display:block}
+    body.admin-mode .student-content{display:block}
+    body.admin-mode .admin-content{display:block}
+    body.student-mode .admin-content{display:none}
+    .admin-banner{display:none;margin-bottom:var(--space-6)}
+    body.admin-mode .admin-banner{display:flex;justify-content:space-between;align-items:center;gap:var(--space-4);padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-primary-highlight);color:var(--color-primary)}
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:1rem;z-index:50}
+    .modal-backdrop.show{display:flex}
+    .modal-card{width:min(100%,460px)}
+    .error-text{color:var(--color-danger);font-size:var(--text-sm)}
+    .status-box{margin-top:var(--space-3);padding:.85rem 1rem;border-radius:var(--radius-md);font-size:var(--text-sm);display:none}
+    .status-box.show{display:block}
+    .status-success{background:color-mix(in srgb, var(--color-success) 14%, var(--color-surface)); color:var(--color-success)}
+    .status-error{background:color-mix(in srgb, var(--color-danger) 12%, var(--color-surface)); color:var(--color-danger)}
+    code{padding:.15rem .4rem;border-radius:.4rem;background:var(--color-surface-offset)}
+    footer{padding:var(--space-10) 0 var(--space-12);color:var(--color-text-muted)}
+    @media (max-width: 920px){.hero-grid,.section-grid,.field-row{grid-template-columns:1fr}}
+    @media (max-width: 640px){.topbar-inner{display:grid;grid-template-columns:1fr}.toolbar{justify-content:flex-start}h1{max-width:unset}.admin-banner{align-items:flex-start;flex-direction:column}}
   </style>
 </head>
 <body class="student-mode">
@@ -102,34 +141,14 @@
           <h1>공부 고민, 여기로 맡겨봐!</h1>
           <p>헷갈리는 문제나 혼자 풀기 어려운 부분이 있다면 편하게 도움을 요청해 봐. 학습나눔부가 내용을 확인하고 함께 해결할 수 있도록 도와줄게.</p>
           <ul class="hero-points" role="list">
-            <li>
-              <strong>도움 요청하기</strong>
-              <span>과목, 문제, 원하는 시간대를 자세히 적어주면 더 알맞게 도움을 받을 수 있어.</span>
-            </li>
-            <li>
-              <strong>후기로 함께 발전하기</strong>
-              <span>도움을 받은 뒤 사용후기를 남겨주면 학습나눔부가 더 좋은 방식으로 성장하는 데 큰 도움이 돼.</span>
-            </li>
+            <li><strong>도움 요청하기</strong><span>과목, 문제, 원하는 시간대를 자세히 적어주면 더 알맞게 도움을 받을 수 있어.</span></li>
+            <li><strong>후기로 함께 발전하기</strong><span>도움을 받은 뒤 사용후기를 남겨주면 학습나눔부가 더 좋은 방식으로 성장하는 데 큰 도움이 돼.</span></li>
           </ul>
         </article>
         <aside class="hero-card hero-side">
-          <div class="stat">
-            <span class="hint">현재 화면</span>
-            <strong id="viewTitle">학생용 모드</strong>
-          </div>
-          <div class="info-card">
-            <p class="hint">학습나눔부원</p>
-            <div class="meta">
-              <span class="badge">김규빈</span>
-              <span class="badge">김래현</span>
-              <span class="badge">김우담</span>
-              <span class="badge">박건형</span>
-            </div>
-          </div>
-          <div class="info-card">
-            <p class="hint">이용 안내</p>
-            <p id="connectionHint">도움이 필요한 내용을 정확하게 적어주고, 도움을 받은 뒤에는 후기도 꼭 남겨줘.</p>
-          </div>
+          <div class="stat"><span class="hint">현재 화면</span><strong id="viewTitle">학생용 모드</strong></div>
+          <div class="info-card"><p class="hint">학습나눔부원</p><div class="meta"><span class="badge">김규빈</span><span class="badge">김래현</span><span class="badge">김우담</span><span class="badge">박건형</span></div></div>
+          <div class="info-card"><p class="hint">이용 안내</p><p id="connectionHint">도움이 필요한 내용을 정확하게 적어주고, 도움을 받은 뒤에는 후기도 꼭 남겨줘.</p></div>
         </aside>
       </div>
     </section>
@@ -142,53 +161,16 @@
           <form id="requestForm">
             <input type="hidden" name="formType" value="request" />
             <div class="field-row">
-              <div class="field-group">
-                <label for="studentName">도움 요청 학생 이름</label>
-                <input id="studentName" name="studentName" type="text" placeholder="예: 홍길동" required />
-              </div>
-              <div class="field-group">
-                <label for="helperName">도움받고 싶은 학습나눔부원</label>
-                <select id="helperName" name="helperName" required>
-                  <option value="">부원을 선택해 주세요</option>
-                  <option>김규빈</option>
-                  <option>김래현</option>
-                  <option>김우담</option>
-                  <option>박건형</option>
-                </select>
-              </div>
+              <div class="field-group"><label for="studentName">도움 요청 학생 이름</label><input id="studentName" name="studentName" type="text" placeholder="예: 홍길동" required /></div>
+              <div class="field-group"><label for="helperName">도움받고 싶은 학습나눔부원</label><select id="helperName" name="helperName" required><option value="">부원을 선택해 주세요</option><option>김규빈</option><option>김래현</option><option>김우담</option><option>박건형</option></select></div>
             </div>
-            <div class="field-group">
-              <label for="helpTopic">도움받고 싶은 내용</label>
-              <textarea id="helpTopic" name="helpTopic" placeholder="예: 수학 경우의 수 교과서 스스로 하기 5번 문제를 어떻게 푸는지 모르겠어요" required></textarea>
-            </div>
+            <div class="field-group"><label for="helpTopic">도움받고 싶은 내용</label><textarea id="helpTopic" name="helpTopic" placeholder="예: 수학 경우의 수 교과서 스스로 하기 5번 문제를 어떻게 푸는지 모르겠어요" required></textarea></div>
             <div class="field-row">
-              <div class="field-group">
-                <label for="helpDate">도움받고 싶은 날짜</label>
-                <input id="helpDate" name="helpDate" type="date" required />
-              </div>
-              <div class="field-group">
-                <label for="helpTime">도움받고 싶은 시간</label>
-                <select id="helpTime" name="helpTime" required>
-                  <option value="">시간대를 선택해 주세요</option>
-                  <option>1교시 후 쉬는시간</option>
-                  <option>2교시 후 쉬는시간</option>
-                  <option>3교시 후 쉬는시간</option>
-                  <option>4교시 후 쉬는시간</option>
-                  <option>점심시간</option>
-                  <option>5교시 후 쉬는시간</option>
-                  <option>6교시 후 쉬는시간</option>
-                  <option>방과 후</option>
-                </select>
-              </div>
+              <div class="field-group"><label for="helpDate">도움받고 싶은 날짜</label><input id="helpDate" name="helpDate" type="date" required /></div>
+              <div class="field-group"><label for="helpTime">도움받고 싶은 시간</label><select id="helpTime" name="helpTime" required><option value="">시간대를 선택해 주세요</option><option>1교시 후 쉬는시간</option><option>2교시 후 쉬는시간</option><option>3교시 후 쉬는시간</option><option>4교시 후 쉬는시간</option><option>점심시간</option><option>5교시 후 쉬는시간</option><option>6교시 후 쉬는시간</option><option>방과 후</option></select></div>
             </div>
-            <div class="field-group">
-              <label for="requestNote">추가 메모</label>
-              <input id="requestNote" name="requestNote" type="text" placeholder="교과서는 가지고 있습니다" />
-            </div>
-            <div class="button-row">
-              <button class="btn btn-primary" type="submit">요청 제출하기</button>
-              <button class="btn btn-secondary" type="reset">다시 쓰기</button>
-            </div>
+            <div class="field-group"><label for="requestNote">추가 메모</label><input id="requestNote" name="requestNote" type="text" placeholder="교과서는 가지고 있습니다" /></div>
+            <div class="button-row"><button class="btn btn-primary" type="submit">요청 제출하기</button><button class="btn btn-secondary" type="reset">다시 쓰기</button></div>
             <div class="status-box" id="requestStatus"></div>
           </form>
         </article>
@@ -199,41 +181,17 @@
           <form id="reviewForm">
             <input type="hidden" name="formType" value="review" />
             <div class="field-row">
-              <div class="field-group">
-                <label for="reviewStudent">도움받은 학생</label>
-                <input id="reviewStudent" name="reviewStudent" type="text" placeholder="예: 홍길동" required />
-              </div>
-              <div class="field-group">
-                <label for="reviewHelper">도움을 준 학습나눔부원</label>
-                <select id="reviewHelper" name="reviewHelper" required>
-                  <option value="">부원을 선택해 주세요</option>
-                  <option>김규빈</option>
-                  <option>김래현</option>
-                  <option>김우담</option>
-                  <option>박건형</option>
-                </select>
-              </div>
+              <div class="field-group"><label for="reviewStudent">도움받은 학생</label><input id="reviewStudent" name="reviewStudent" type="text" placeholder="예: 홍길동" required /></div>
+              <div class="field-group"><label for="reviewHelper">도움을 준 학습나눔부원</label><select id="reviewHelper" name="reviewHelper" required><option value="">부원을 선택해 주세요</option><option>김규빈</option><option>김래현</option><option>김우담</option><option>박건형</option></select></div>
             </div>
             <div class="field-group">
               <label>별점 평가</label>
-              <div class="stars" role="radiogroup" aria-label="별점 선택">
-                <button class="star-btn" type="button" data-rating="1" aria-label="1점">★</button>
-                <button class="star-btn" type="button" data-rating="2" aria-label="2점">★</button>
-                <button class="star-btn" type="button" data-rating="3" aria-label="3점">★</button>
-                <button class="star-btn" type="button" data-rating="4" aria-label="4점">★</button>
-                <button class="star-btn" type="button" data-rating="5" aria-label="5점">★</button>
-              </div>
+              <div class="stars" role="radiogroup" aria-label="별점 선택"><button class="star-btn" type="button" data-rating="1" aria-label="1점">★</button><button class="star-btn" type="button" data-rating="2" aria-label="2점">★</button><button class="star-btn" type="button" data-rating="3" aria-label="3점">★</button><button class="star-btn" type="button" data-rating="4" aria-label="4점">★</button><button class="star-btn" type="button" data-rating="5" aria-label="5점">★</button></div>
               <input type="hidden" id="ratingValue" name="ratingValue" required />
               <p class="hint" id="ratingOutput">별점을 선택해 주세요.</p>
             </div>
-            <div class="field-group">
-              <label for="reviewText">후기 내용</label>
-              <textarea id="reviewText" name="reviewText" placeholder="예: 설명이 친절해서 이해가 잘 되었어요." required></textarea>
-            </div>
-            <div class="button-row">
-              <button class="btn btn-primary" type="submit">후기 저장하기</button>
-              <button class="btn btn-secondary" type="reset">초기화</button>
-            </div>
+            <div class="field-group"><label for="reviewText">후기 내용</label><textarea id="reviewText" name="reviewText" placeholder="예: 설명이 친절해서 이해가 잘 되었어요." required></textarea></div>
+            <div class="button-row"><button class="btn btn-primary" type="submit">후기 저장하기</button><button class="btn btn-secondary" type="reset">초기화</button></div>
             <div class="status-box" id="reviewStatus"></div>
           </form>
         </article>
@@ -242,10 +200,7 @@
 
     <section class="admin-content admin-only" style="margin-top:2rem;">
       <div class="admin-banner">
-        <div>
-          <strong>학습나눔부 관리 모드가 열려 있어.</strong>
-          <p class="hint">아래 목록은 Google Sheets에서 직접 불러온 내용이야.</p>
-        </div>
+        <div><strong>학습나눔부 관리 모드가 열려 있어.</strong><p class="hint">아래 목록은 Google Sheets에서 직접 불러온 내용이야.</p></div>
         <button class="btn btn-danger" id="logoutAdminBtn" type="button">관리 모드 닫기</button>
       </div>
       <div class="section-grid">
@@ -261,30 +216,17 @@
             <button class="tab active" type="button" data-tab="requests" role="tab" aria-selected="true">제출된 요청</button>
             <button class="tab" type="button" data-tab="reviews" role="tab" aria-selected="false">사용후기</button>
           </div>
-          <div id="tab-requests" class="tab-panel" style="margin-top:1rem;">
-            <div id="requestList" class="request-list"></div>
-          </div>
-          <div id="tab-reviews" class="tab-panel" hidden style="margin-top:1rem;">
-            <div id="reviewList" class="review-list"></div>
-          </div>
+          <div id="tab-requests" class="tab-panel" style="margin-top:1rem;"><div id="requestList" class="request-list"></div></div>
+          <div id="tab-reviews" class="tab-panel" hidden style="margin-top:1rem;"><div id="reviewList" class="review-list"></div></div>
           <div class="status-box" id="adminStatus"></div>
         </article>
         <aside class="panel">
           <h2>운영 메모</h2>
           <p class="panel-intro">같은 Apps Script가 저장과 읽기를 모두 처리해.</p>
           <div class="info-list">
-            <div class="info-card">
-              <strong>확인 가능한 내용</strong>
-              <p>제출된 요청과 후기를 학습나눔부 화면에서 바로 확인할 수 있어.</p>
-            </div>
-            <div class="info-card">
-              <strong>도움 요청 관리</strong>
-              <p>요청 학생, 원하는 부원, 날짜와 시간, 추가 메모까지 한눈에 볼 수 있어.</p>
-            </div>
-            <div class="info-card">
-              <strong>후기 확인</strong>
-              <p>학생들이 남긴 별점과 후기를 보고 다음 활동에 참고할 수 있어.</p>
-            </div>
+            <div class="info-card"><strong>확인 가능한 내용</strong><p>제출된 요청과 후기를 학습나눔부 화면에서 바로 확인할 수 있어.</p></div>
+            <div class="info-card"><strong>도움 요청 관리</strong><p>요청 학생, 원하는 부원, 날짜와 시간, 추가 메모까지 한눈에 볼 수 있어.</p></div>
+            <div class="info-card"><strong>후기 확인</strong><p>학생들이 남긴 별점과 후기를 보고 다음 활동에 참고할 수 있어.</p></div>
           </div>
         </aside>
       </div>
@@ -296,15 +238,8 @@
       <h2 style="margin-bottom:.5rem;font-family:var(--font-display);">학습나눔부 모드 비밀번호</h2>
       <p class="panel-intro" style="margin-bottom:1rem;">학습나눔부용 화면을 열려면 비밀번호를 입력해 주세요.</p>
       <form id="passwordForm">
-        <div class="field-group">
-          <label for="adminPassword">비밀번호</label>
-          <input id="adminPassword" type="password" placeholder="비밀번호 입력" required />
-          <p class="error-text" id="passwordError" hidden>비밀번호가 올바르지 않아요.</p>
-        </div>
-        <div class="button-row">
-          <button class="btn btn-primary" type="submit">확인</button>
-          <button class="btn btn-secondary" type="button" id="cancelPasswordBtn">취소</button>
-        </div>
+        <div class="field-group"><label for="adminPassword">비밀번호</label><input id="adminPassword" type="password" placeholder="비밀번호 입력" required /><p class="error-text" id="passwordError" hidden>비밀번호가 올바르지 않아요.</p></div>
+        <div class="button-row"><button class="btn btn-primary" type="submit">확인</button><button class="btn btn-secondary" type="button" id="cancelPasswordBtn">취소</button></div>
       </form>
     </div>
   </div>
@@ -332,9 +267,15 @@
     const requestList = document.getElementById('requestList');
     const reviewList = document.getElementById('reviewList');
     const adminStatus = document.getElementById('adminStatus');
+    const requestForm = document.getElementById('requestForm');
+    const reviewForm = document.getElementById('reviewForm');
+    const ratingValue = document.getElementById('ratingValue');
+    const ratingOutput = document.getElementById('ratingOutput');
+    const starButtons = document.querySelectorAll('.star-btn');
 
     let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     root.setAttribute('data-theme', theme);
+
     const updateThemeIcon = () => {
       themeToggle.setAttribute('aria-label', theme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환');
       themeToggle.innerHTML = theme === 'dark'
@@ -342,6 +283,7 @@
         : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
     };
     updateThemeIcon();
+
     themeToggle.addEventListener('click', () => {
       theme = theme === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', theme);
@@ -355,6 +297,7 @@
       adminModeBtn.classList.toggle('active', mode === 'admin');
       viewTitle.textContent = mode === 'admin' ? '학습나눔부 관리 모드' : '학생용 모드';
     };
+
     const openPasswordModal = () => {
       passwordModal.classList.add('show');
       passwordModal.setAttribute('aria-hidden', 'false');
@@ -362,14 +305,17 @@
       passwordError.hidden = true;
       setTimeout(() => passwordInput.focus(), 30);
     };
+
     const closePasswordModal = () => {
       passwordModal.classList.remove('show');
       passwordModal.setAttribute('aria-hidden', 'true');
     };
+
     studentModeBtn.addEventListener('click', () => setMode('student'));
     adminModeBtn.addEventListener('click', () => openPasswordModal());
     cancelPasswordBtn.addEventListener('click', () => closePasswordModal());
     logoutAdminBtn.addEventListener('click', () => setMode('student'));
+
     passwordForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       if (passwordInput.value === ADMIN_PASSWORD) {
@@ -387,8 +333,18 @@
       el.className = `status-box show ${type === 'success' ? 'status-success' : 'status-error'}`;
     };
 
-    const submitToSheet = async (formElement, statusElement) => {
-      const payload = Object.fromEntries(new FormData(formElement).entries());
+    const resetStatus = (el) => {
+      el.textContent = '';
+      el.className = 'status-box';
+    };
+
+    const resetReviewStars = () => {
+      ratingValue.value = '';
+      ratingOutput.textContent = '별점을 선택해 주세요.';
+      starButtons.forEach((star) => star.classList.remove('active'));
+    };
+
+    const submitToSheet = async (payload, statusElement) => {
       try {
         const response = await fetch(APPS_SCRIPT_URL, {
           method: 'POST',
@@ -398,7 +354,11 @@
         });
         const text = await response.text();
         let result = {};
-        try { result = JSON.parse(text); } catch (e) { result = { status: 'unknown' }; }
+        try {
+          result = JSON.parse(text);
+        } catch (e) {
+          result = { status: 'unknown' };
+        }
         if (response.ok && result.status === 'success') return true;
         showStatus(statusElement, '전송은 되었지만 응답 확인에 실패했어요. Apps Script 배포를 다시 확인해 봐.', 'error');
         return false;
@@ -465,20 +425,6 @@
 
     refreshDataBtn.addEventListener('click', loadSheetData);
 
-    document.getElementById('requestForm').addEventListener('submit', async (event) => {
-      event.preventDefault();
-      const statusEl = document.getElementById('requestStatus');
-      const ok = await submitToSheet(event.currentTarget, statusEl);
-      if (ok) {
-        event.currentTarget.reset();
-        showStatus(statusEl, '요청이 Google Sheets에 저장되었어요.', 'success');
-        if (body.classList.contains('admin-mode')) await loadSheetData();
-      }
-    });
-
-    const starButtons = document.querySelectorAll('.star-btn');
-    const ratingValue = document.getElementById('ratingValue');
-    const ratingOutput = document.getElementById('ratingOutput');
     starButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const selected = Number(button.dataset.rating);
@@ -488,32 +434,57 @@
       });
     });
 
-    document.getElementById('reviewForm').addEventListener('reset', () => {
-      ratingValue.value = '';
-      ratingOutput.textContent = '별점을 선택해 주세요.';
-      starButtons.forEach((star) => star.classList.remove('active'));
+    reviewForm.addEventListener('reset', () => {
+      resetReviewStars();
+      resetStatus(document.getElementById('reviewStatus'));
     });
 
-    document.getElementById('reviewForm').addEventListener('submit', async (event) => {
+    requestForm.addEventListener('reset', () => {
+      resetStatus(document.getElementById('requestStatus'));
+    });
+
+    requestForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const statusEl = document.getElementById('requestStatus');
+      const payload = Object.fromEntries(new FormData(requestForm).entries());
+      const ok = await submitToSheet(payload, statusEl);
+
+      if (ok) {
+        requestForm.reset();
+        resetStatus(statusEl);
+        alert('도움 요청이 제출되었어요.');
+        if (body.classList.contains('admin-mode')) {
+          loadSheetData();
+        }
+      }
+    });
+
+    reviewForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       const statusEl = document.getElementById('reviewStatus');
+
       if (!ratingValue.value) {
         showStatus(statusEl, '별점을 먼저 선택해 주세요.', 'error');
         return;
       }
-      const ok = await submitToSheet(event.currentTarget, statusEl);
+
+      const payload = Object.fromEntries(new FormData(reviewForm).entries());
+      const ok = await submitToSheet(payload, statusEl);
+
       if (ok) {
-        event.currentTarget.reset();
-        ratingValue.value = '';
-        ratingOutput.textContent = '별점을 선택해 주세요.';
-        starButtons.forEach((star) => star.classList.remove('active'));
-        showStatus(statusEl, '후기가 Google Sheets에 저장되었어요.', 'success');
-        if (body.classList.contains('admin-mode')) await loadSheetData();
+        reviewForm.reset();
+        resetReviewStars();
+        resetStatus(statusEl);
+        alert('사용후기가 제출되었어요.');
+        if (body.classList.contains('admin-mode')) {
+          loadSheetData();
+        }
       }
     });
 
     const tabs = document.querySelectorAll('.tab');
     const tabPanels = document.querySelectorAll('.tab-panel');
+
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         tabs.forEach((btn) => {
