@@ -31,25 +31,26 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth}
     body{min-height:100dvh;line-height:1.6;font-family:var(--font-body);font-size:var(--text-base);background:linear-gradient(180deg,var(--color-bg),var(--color-surface-2));color:var(--color-text)}
-    button,input,textarea,select{font:inherit;color:inherit} button{cursor:pointer;border:none;background:none} :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    button,input,textarea,select{font:inherit;color:inherit} button{cursor:pointer;border:none;background:none} a{color:var(--color-primary)} :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
     .container{width:min(calc(100% - 2rem),var(--content-default));margin-inline:auto}
     .topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--color-bg) 82%, transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--color-divider)}
     .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-4) 0}
     .brand{display:flex;align-items:center;gap:var(--space-3)} .brand-mark{width:44px;height:44px;padding:8px;border-radius:14px;background:var(--color-primary-highlight);color:var(--color-primary);box-shadow:var(--shadow-sm)}
     .brand-text strong{display:block;font-size:var(--text-lg);font-family:var(--font-display)} .brand-text span{display:block;font-size:var(--text-sm);color:var(--color-text-muted)}
-    .toolbar{display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap} .mode-btn,.theme-toggle{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.75rem 1rem;border-radius:var(--radius-full);border:1px solid var(--color-border);background:var(--color-surface);transition:all var(--transition-interactive)}
+    .toolbar{display:flex;align-items:center;gap:var(--space-2);flex-wrap:wrap} .mode-btn,.theme-toggle,.refresh-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.75rem 1rem;border-radius:var(--radius-full);border:1px solid var(--color-border);background:var(--color-surface);transition:all var(--transition-interactive)}
     .mode-btn.active{background:var(--color-primary);border-color:var(--color-primary);color:var(--color-text-inverse)}
     .hero{padding:var(--space-12) 0 var(--space-8)} .hero-grid,.section-grid{display:grid;gap:var(--space-6)} .hero-grid{grid-template-columns:1.15fr .85fr;align-items:start} .section-grid{grid-template-columns:1fr 1fr}
     .hero-card,.panel,.modal-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);box-shadow:var(--shadow-md)} .hero-copy,.hero-side,.panel,.modal-card{padding:clamp(1.25rem,2.8vw,2rem)}
     .eyebrow{display:inline-flex;align-items:center;gap:.5rem;padding:.4rem .8rem;border-radius:var(--radius-full);background:var(--color-primary-highlight);color:var(--color-primary);font-size:var(--text-sm);font-weight:600;margin-bottom:var(--space-4)}
     h1{font-family:var(--font-display);font-size:var(--text-2xl);line-height:1.15;max-width:12ch;margin-bottom:var(--space-4)}
-    .hero-copy p,.panel-intro,.hint,.empty{color:var(--color-text-muted)}
+    .hero-copy p,.panel-intro,.hint,.empty,.muted{color:var(--color-text-muted)}
     .hero-points,.info-list,.request-list,.review-list{display:grid;gap:var(--space-4)} .hero-points li,.stat,.info-card,.request-card,.review-card{padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-2);border:1px solid var(--color-divider)}
     .hero-points li{list-style:none;display:flex;gap:var(--space-3);align-items:flex-start} .stat strong{display:block;font-size:var(--text-xl);font-family:var(--font-display)} main{padding-bottom:var(--space-16)} .panel h2{font-size:var(--text-xl);font-family:var(--font-display);margin-bottom:var(--space-2)}
     form{display:grid;gap:var(--space-4)} .field-group{display:grid;gap:var(--space-2)} .field-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)} label{font-weight:600}
     input,select,textarea{width:100%;padding:.95rem 1rem;border-radius:var(--radius-md);border:1px solid var(--color-border);background:var(--color-surface-2);transition:border-color var(--transition-interactive), box-shadow var(--transition-interactive), background var(--transition-interactive)}
     textarea{min-height:140px;resize:vertical} input:focus,select:focus,textarea:focus{border-color:var(--color-primary);box-shadow:0 0 0 4px color-mix(in srgb, var(--color-primary) 18%, transparent);background:var(--color-surface)}
-    .button-row,.tabs,.meta,.stars{display:flex;gap:var(--space-3);flex-wrap:wrap}
+    .button-row,.tabs,.meta,.stars,.row-between{display:flex;gap:var(--space-3);flex-wrap:wrap;align-items:center}
+    .row-between{justify-content:space-between}
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.9rem 1.25rem;border-radius:var(--radius-full);font-weight:600;transition:all var(--transition-interactive)} .btn-primary{background:var(--color-primary);color:var(--color-text-inverse)} .btn-primary:hover{background:var(--color-primary-hover)} .btn-secondary,.tab{background:var(--color-surface-2);border:1px solid var(--color-border)} .btn-danger{background:var(--color-danger);color:#fff}
     .tab{min-height:44px;padding:.75rem 1rem;border-radius:var(--radius-full)} .tab.active{background:var(--color-primary-highlight);color:var(--color-primary);border-color:color-mix(in srgb,var(--color-primary) 35%, var(--color-border))}
     .badge{display:inline-flex;align-items:center;padding:.35rem .7rem;border-radius:var(--radius-full);font-size:var(--text-xs);background:var(--color-primary-highlight);color:var(--color-primary);font-weight:700}
@@ -67,7 +68,7 @@
     <div class="container topbar-inner">
       <div class="brand" aria-label="1-1 학습 도우미 로고">
         <div class="brand-mark"><svg viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14h18a8 8 0 0 1 8 8v12H18a8 8 0 0 0-8 8V14Z"></path><path d="M18 18h18v16"></path><path d="M18 26h10"></path><path d="M18 31h7"></path><path d="M34 10v8"></path><path d="M30 14h8"></path></svg></div>
-        <div class="brand-text"><strong>1-1 학습 도우미</strong><span>Google Sheets 기록 연동 버전</span></div>
+        <div class="brand-text"><strong>1-1 학습 도우미</strong><span>읽기 + 저장 확장형 버전</span></div>
       </div>
       <div class="toolbar">
         <button class="mode-btn active" id="studentModeBtn" type="button">학생용</button>
@@ -83,16 +84,16 @@
         <article class="hero-card hero-copy">
           <span class="eyebrow">학교 테마 · 초록/화이트</span>
           <h1>공부 고민, 여기로 맡겨봐!</h1>
-          <p>학생이 남긴 도움 요청과 후기가 Google Sheets에 실제로 기록되도록 바꾼 버전이야. 학습나눔부는 같은 페이지 안에서 비밀번호를 입력해 관리 화면을 열고, 시트 링크를 통해 누적 기록을 확인하면 돼.</p>
+          <p>이 버전은 학생이 남긴 도움 요청과 후기를 Google Sheets에 저장하고, 학습나눔부용 화면 안에서도 바로 불러와 볼 수 있게 만든 확장형이야.</p>
           <ul class="hero-points" role="list">
-            <li><strong>실제 기록 저장</strong><span>폼 제출 내용이 Google Apps Script 웹앱을 통해 Google Sheets에 누적돼.</span></li>
-            <li><strong>한 링크 운영</strong><span>학생용과 학습나눔부용은 같은 페이지를 쓰고, 관리 모드만 비밀번호로 잠가둘 수 있어.</span></li>
+            <li><strong>실제 기록 저장</strong><span>폼 제출 내용이 Apps Script를 통해 Requests, Reviews 시트에 누적돼.</span></li>
+            <li><strong>웹사이트 안에서 확인</strong><span>학습나눔부 모드에서 새로고침 버튼을 누르면 시트 내용이 바로 카드 형태로 보여.</span></li>
           </ul>
         </article>
         <aside class="hero-card hero-side">
           <div class="stat"><span class="hint">현재 화면</span><strong id="viewTitle">학생용 모드</strong></div>
           <div class="info-card"><p class="hint">학습나눔부원</p><div class="meta"><span class="badge">김규빈</span><span class="badge">김래현</span><span class="badge">김우담</span><span class="badge">박건형</span></div></div>
-          <div class="info-card"><p class="hint">설정 필요</p><p><code>APPS_SCRIPT_URL</code>과 시트 링크만 네 정보로 바꾸면 바로 쓸 수 있어.</p></div>
+          <div class="info-card"><p class="hint">이용 안내</p><p id="connectionHint">도움이 필요한 내용을 정확하게 적어주면 학습나눔부가 더 빠르게 확인할 수 있어.</p></div>
         </aside>
       </div>
     </section>
@@ -101,7 +102,7 @@
       <div class="section-grid">
         <article class="panel">
           <h2>도움 요청 보내기</h2>
-          <p class="panel-intro">제출한 내용은 Google Sheets의 Requests 시트에 저장되도록 연결할 수 있어.</p>
+          <p class="panel-intro">궁금한 과목이나 문제를 적어주면 학습나눔부가 확인하고 도움을 줄 수 있어.</p>
           <form id="requestForm">
             <input type="hidden" name="formType" value="request" />
             <div class="field-row">
@@ -121,7 +122,7 @@
 
         <article class="panel">
           <h2>사용후기 남기기</h2>
-          <p class="panel-intro">후기 내용은 Google Sheets의 Reviews 시트에 저장되도록 연결할 수 있어.</p>
+          <p class="panel-intro">도움을 받은 뒤 느낀 점을 남겨주면 더 좋은 학습 도움 활동에 도움이 돼.</p>
           <form id="reviewForm">
             <input type="hidden" name="formType" value="review" />
             <div class="field-row">
@@ -140,40 +141,37 @@
           </form>
         </article>
       </div>
-
-      <section class="panel" style="margin-top:2rem;">
-        <h2>안내</h2>
-        <p class="panel-intro">아래 두 값만 바꾸면 현재 디자인을 유지하면서 실제 기록 저장 기능을 붙일 수 있어.</p>
-        <div class="info-list">
-          <div class="info-card"><strong>1. Apps Script URL</strong><p>코드의 <code>APPS_SCRIPT_URL</code>에 배포한 웹앱 주소(<code>/exec</code>)를 넣어.</p></div>
-          <div class="info-card"><strong>2. 시트 링크</strong><p>관리 모드에서 열 수 있게 <code>SHEET_URL</code>에 네 Google Sheets 링크를 넣어.</p></div>
-          <div class="info-card"><strong>3. 비밀번호</strong><p><code>ADMIN_PASSWORD</code> 값을 원하는 비밀번호로 바꾸면 돼.</p></div>
-        </div>
-      </section>
     </section>
 
     <section class="admin-content admin-only" style="margin-top:2rem;">
       <div class="admin-banner">
-        <div><strong>학습나눔부 관리 모드가 열려 있어.</strong><p class="hint">실제 누적 기록은 아래 버튼으로 Google Sheets에서 확인하면 돼.</p></div>
+        <div><strong>학습나눔부 관리 모드가 열려 있어.</strong><p class="hint">아래 목록은 Google Sheets에서 직접 불러온 내용이야.</p></div>
         <button class="btn btn-danger" id="logoutAdminBtn" type="button">관리 모드 닫기</button>
       </div>
       <div class="section-grid">
         <article class="panel">
-          <h2>기록 확인</h2>
-          <p class="panel-intro">정적 웹사이트에서는 제출 목록을 사이트 내부에서 완전히 동기화해 보여주기보다, 기록을 Google Sheets에서 확인하는 방식이 가장 안정적이야.</p>
-          <div class="info-list">
-            <div class="info-card"><strong>요청 기록</strong><p>Requests 시트에서 학생 이름, 원하는 부원, 날짜, 시간, 메모를 확인해.</p></div>
-            <div class="info-card"><strong>후기 기록</strong><p>Reviews 시트에서 별점과 후기 내용을 확인해.</p></div>
-            <div class="info-card"><strong>바로 열기</strong><p><a id="sheetLink" href="#" target="_blank" rel="noopener noreferrer">Google Sheets 열기</a></p></div>
+          <div class="row-between" style="margin-bottom:1rem;">
+            <div>
+              <h2>학습나눔부 관리</h2>
+              <p class="panel-intro">시트에 저장된 요청과 후기를 웹사이트 안에서 바로 확인할 수 있어.</p>
+            </div>
+            <button class="refresh-btn" id="refreshDataBtn" type="button">목록 새로고침</button>
           </div>
+          <div class="tabs" role="tablist" aria-label="관리 탭">
+            <button class="tab active" type="button" data-tab="requests" role="tab" aria-selected="true">제출된 요청</button>
+            <button class="tab" type="button" data-tab="reviews" role="tab" aria-selected="false">사용후기</button>
+          </div>
+          <div id="tab-requests" class="tab-panel" style="margin-top:1rem;"><div id="requestList" class="request-list"></div></div>
+          <div id="tab-reviews" class="tab-panel" hidden style="margin-top:1rem;"><div id="reviewList" class="review-list"></div></div>
+          <div class="status-box" id="adminStatus"></div>
         </article>
         <aside class="panel">
           <h2>운영 메모</h2>
-          <p class="panel-intro">Apps Script와 Google Sheets를 쓰면 별도 서버 없이도 실제 제출 기록을 남길 수 있어.</p>
+          <p class="panel-intro">같은 Apps Script가 저장과 읽기를 모두 처리해.</p>
           <div class="info-list">
-            <div class="info-card"><strong>현재 기본 비밀번호</strong><p><code>study11</code></p></div>
-            <div class="info-card"><strong>웹앱 배포 설정</strong><p>Apps Script는 <code>Execute as: Me</code>, 접근 권한은 <code>Anyone</code> 또는 익명 접근 가능으로 배포해야 해.</p></div>
-            <div class="info-card"><strong>중요</strong><p>Apps Script 코드를 수정한 뒤에는 새 버전으로 다시 배포해야 변경이 반영돼.</p></div>
+            <div class="info-card"><strong>확인 가능한 내용</strong><p>제출된 요청과 후기를 학습나눔부 화면에서 바로 확인할 수 있어.</p></div>
+            <div class="info-card"><strong>도움 요청 관리</strong><p>요청 학생, 원하는 부원, 날짜와 시간, 추가 메모까지 한눈에 볼 수 있어.</p></div>
+            <div class="info-card"><strong>후기 확인</strong><p>학생들이 남긴 별점과 후기를 보고 다음 활동에 참고할 수 있어.</p></div>
           </div>
         </aside>
       </div>
@@ -191,7 +189,7 @@
     </div>
   </div>
 
-  <footer class="container"><p>1-1 학습 도우미 · Google Sheets 기록 연동 버전</p></footer>
+  <footer class="container"><p>1-1 학습 도우미 · 읽기 + 저장 확장형 버전</p></footer>
 
   <script>
     const ADMIN_PASSWORD = 'study11';
@@ -210,8 +208,10 @@
     const passwordError = document.getElementById('passwordError');
     const cancelPasswordBtn = document.getElementById('cancelPasswordBtn');
     const viewTitle = document.getElementById('viewTitle');
-    const sheetLink = document.getElementById('sheetLink');
-    sheetLink.href = SHEET_URL;
+    const refreshDataBtn = document.getElementById('refreshDataBtn');
+    const requestList = document.getElementById('requestList');
+    const reviewList = document.getElementById('reviewList');
+    const adminStatus = document.getElementById('adminStatus');
 
     let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     root.setAttribute('data-theme', theme);
@@ -237,10 +237,16 @@
     adminModeBtn.addEventListener('click', () => openPasswordModal());
     cancelPasswordBtn.addEventListener('click', () => closePasswordModal());
     logoutAdminBtn.addEventListener('click', () => setMode('student'));
-    passwordForm.addEventListener('submit', (event) => {
+    passwordForm.addEventListener('submit', async (event) => {
       event.preventDefault();
-      if (passwordInput.value === ADMIN_PASSWORD) { closePasswordModal(); setMode('admin'); }
-      else { passwordError.hidden = false; passwordInput.focus(); }
+      if (passwordInput.value === ADMIN_PASSWORD) {
+        closePasswordModal();
+        setMode('admin');
+        await loadSheetData();
+      } else {
+        passwordError.hidden = false;
+        passwordInput.focus();
+      }
     });
 
     const showStatus = (el, message, type) => {
@@ -249,10 +255,6 @@
     };
 
     const submitToSheet = async (formElement, statusElement) => {
-      if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.includes('여기에_Apps_Script')) {
-        showStatus(statusElement, '아직 Apps Script URL이 설정되지 않았어요.', 'error');
-        return false;
-      }
       const payload = Object.fromEntries(new FormData(formElement).entries());
       try {
         const response = await fetch(APPS_SCRIPT_URL, {
@@ -263,10 +265,8 @@
         });
         const text = await response.text();
         let result = {};
-        try { result = JSON.parse(text); } catch (e) { result = { status: 'unknown', raw: text }; }
-        if (response.ok && result.status === 'success') {
-          return true;
-        }
+        try { result = JSON.parse(text); } catch (e) { result = { status: 'unknown' }; }
+        if (response.ok && result.status === 'success') return true;
         showStatus(statusElement, '전송은 되었지만 응답 확인에 실패했어요. Apps Script 배포를 다시 확인해 봐.', 'error');
         return false;
       } catch (error) {
@@ -275,6 +275,63 @@
       }
     };
 
+    const renderRequests = (items) => {
+      if (!items.length) {
+        requestList.innerHTML = '<div class="empty">아직 제출된 요청이 없어요.</div>';
+        return;
+      }
+      requestList.innerHTML = items.map((item) => `
+        <article class="request-card">
+          <h3>${item.studentName || '이름 없음'} 학생의 요청</h3>
+          <div class="meta">
+            <span class="badge">담당 희망: ${item.helperName || '-'}</span>
+            <span class="badge">${item.helpDate || '-'}</span>
+            <span class="badge">${item.helpTime || '-'}</span>
+          </div>
+          <p><strong>도움 내용:</strong> ${item.helpTopic || '-'}</p>
+          <p><strong>추가 메모:</strong> ${item.requestNote || '없음'}</p>
+          <p class="muted">등록 시각: ${item.timestamp || '-'}</p>
+        </article>
+      `).join('');
+    };
+
+    const renderReviews = (items) => {
+      if (!items.length) {
+        reviewList.innerHTML = '<div class="empty">아직 등록된 후기가 없어요.</div>';
+        return;
+      }
+      reviewList.innerHTML = items.map((item) => `
+        <article class="review-card">
+          <h3>${item.reviewStudent || '이름 없음'} 학생 후기</h3>
+          <div class="meta">
+            <span class="badge">담당 부원: ${item.reviewHelper || '-'}</span>
+            <span class="badge">별점 ${'★'.repeat(Number(item.ratingValue || 0)) || '-'}</span>
+          </div>
+          <p>${item.reviewText || '-'}</p>
+          <p class="muted">등록 시각: ${item.timestamp || '-'}</p>
+        </article>
+      `).join('');
+    };
+
+    const loadSheetData = async () => {
+      try {
+        showStatus(adminStatus, 'Google Sheets 내용을 불러오는 중이야.', 'success');
+        const response = await fetch(APPS_SCRIPT_URL);
+        const data = await response.json();
+        if (data.status !== 'success') {
+          showStatus(adminStatus, '목록을 불러오지 못했어. Apps Script 읽기 설정을 확인해 줘.', 'error');
+          return;
+        }
+        renderRequests(data.requests || []);
+        renderReviews(data.reviews || []);
+        showStatus(adminStatus, '최신 목록을 불러왔어.', 'success');
+      } catch (error) {
+        showStatus(adminStatus, '목록을 불러오지 못했어. 웹앱 권한과 배포 상태를 확인해 줘.', 'error');
+      }
+    };
+
+    refreshDataBtn.addEventListener('click', loadSheetData);
+
     document.getElementById('requestForm').addEventListener('submit', async (event) => {
       event.preventDefault();
       const statusEl = document.getElementById('requestStatus');
@@ -282,6 +339,7 @@
       if (ok) {
         event.currentTarget.reset();
         showStatus(statusEl, '요청이 Google Sheets에 저장되었어요.', 'success');
+        if (body.classList.contains('admin-mode')) await loadSheetData();
       }
     });
 
@@ -317,7 +375,20 @@
         ratingOutput.textContent = '별점을 선택해 주세요.';
         starButtons.forEach((star) => star.classList.remove('active'));
         showStatus(statusEl, '후기가 Google Sheets에 저장되었어요.', 'success');
+        if (body.classList.contains('admin-mode')) await loadSheetData();
       }
+    });
+
+    const tabs = document.querySelectorAll('.tab');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((btn) => { btn.classList.remove('active'); btn.setAttribute('aria-selected', 'false'); });
+        tabPanels.forEach((panel) => panel.hidden = true);
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById(`tab-${tab.dataset.tab}`).hidden = false;
+      });
     });
   </script>
 </body>
